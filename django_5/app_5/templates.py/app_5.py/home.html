@@ -1,0 +1,31 @@
+{% extends 'app_5/base.html' %}
+	{% block content %}
+	<div class="todo-list">
+	<h3>Tasks</h3>
+	{% for task in tasks %}
+
+		<div class="item-row">
+
+			<a class="btn btn-sm btn-info" href="{% url 'task_update' task.id %}">Update</a>
+			<a class="btn btn-sm btn-danger" href="{% url 'task_delete' task.id %}">Delete</a>
+			<a href="{% url 'task_view' task.id %}">
+			{% if task.status == 3 %}
+			<strike>{{task}}</strike>
+			{% else %}
+			<span>{{task}}</span>
+			{% endif %}
+			</a>
+
+		</div>
+
+	{% endfor %}
+		<div class="item-row">
+				<a href="{% url 'new_task' %}"><button class="btn btn-success" type="submit" name="Create Task">Create</button></a>
+		</div>
+	</div>
+
+{% endblock content%}
+
+
+
+
