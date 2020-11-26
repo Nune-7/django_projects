@@ -23,7 +23,7 @@ def user_register(request):
 
             return redirect("login")
         else:
-            messages.add_message(request, messages.SUCCESS, "User is not created successfully")
+            messages.add_message(request, messages.WARNING, "User is not created successfully")
 
             
     form = UserRegisterForm()
