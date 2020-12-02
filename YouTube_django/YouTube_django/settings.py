@@ -121,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-YouTube_dATA_API_KEY= 'AIzaSyBOVZDzLUhH4499e_qyb2hbqG2KGNcjHlI'
+YOUTUBE_dATA_API_KEY= 'AIzaSyBOVZDzLUhH4499e_qyb2hbqG2KGNcjHlI'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'

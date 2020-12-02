@@ -1,0 +1,29 @@
+{% extends 'download_app/base.html' %}
+    {% block content %}
+    <div class="todo-list">
+
+        <form class="" action="/downloading" method="post">
+          {% csrf_token %}
+          <div class="">
+            {% for video in videos %}
+            <img src="{{video.thumbnail}}" alt="" width="100%">
+            <p id="title" style="margin-top:5px;"><b>{{video.title}}</b></p>
+            
+          </div>
+
+        
+            <div class="">
+              <input type="hidden" name="video_url" value="{{video.url}}">
+            </div>
+            {% endfor %}
+            
+              <div class="">
+                <button class="btn download" id="show"><i class="fa fa-download"></i> Download</button>
+              </div>
+           
+        
+        </form>
+                
+    </div>
+
+{% endblock content%}

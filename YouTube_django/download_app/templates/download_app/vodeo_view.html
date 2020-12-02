@@ -1,0 +1,17 @@
+{% extends 'download_app/base.html' %}
+{% block content %}
+	{% for video in videos %}
+	<div>
+		<div>
+			<img src="{{vidoes.thumbnail}}" alt="***">
+		</div>
+		<p>{{video.title}}</p>
+		<div>
+			<a type="button" target="_blank" href="{{video.url}}" download="{{video.title}}.mp3">Play</a>
+			<a href="{% url 'downloading' video.id %}"> Convert to mp3</a>
+		</div>
+	</div>
+	{% endfor %}
+
+
+{% endblock content%}
